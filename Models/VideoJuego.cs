@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace appWeb21.Models
 {
@@ -35,6 +36,7 @@ namespace appWeb21.Models
         public string Descripcion { get; set; }
 
         // Propiedad de navegación para acceder a las compras realizadas de este videojuego
+        [ValidateNever]
         public ICollection<Compra> Compras { get; set; }
     }
 }
